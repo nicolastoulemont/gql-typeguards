@@ -161,18 +161,18 @@ interface ThirdObject extends {
 }
 
 // type tuple = Array<Object | OtherObject | ThirdObject>
-const typedArrayOfObjectOrOtherObject = tuple.filter(isNotTypesInTuple(['Object', 'OtherObject']))
+const typedArrayOfThirdObject = tuple.filter(isNotTypesInTuple(['Object', 'OtherObject']))
 
 // Possible undefined
 tuple[0].name
 tuple[0].title
 
 // Infered as invalid
-typedArrayOfObjectOrOtherObject[0].name
+typedArrayOfThirdObject[0].name
 
 // Infered as invalid
-typedArrayOfObjectOrOtherObject[0].title
+typedArrayOfThirdObject[0].title
 
 // Infered as valid
-typedArrayOfObjectOrOtherObject[0].content
+typedArrayOfThirdObject[0].content
 ```
